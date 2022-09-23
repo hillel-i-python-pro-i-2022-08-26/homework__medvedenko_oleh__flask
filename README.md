@@ -1,6 +1,6 @@
 <h1>Hello there! :sparkles:</h1>
 
-![Flask](https://img.shields.io/badge/Flask-checking-orange/?link=https://github.com/hillel-i-python-pro-i-2022-08-26/homework__medvedenko_oleh__main)
+![Flask](https://img.shields.io/badge/Flask-Stable-green/)
 
 <h3>This is a little website with hometasks.</h3>
 <li>▶️ To run it use: "make homework-i-run"</li>
