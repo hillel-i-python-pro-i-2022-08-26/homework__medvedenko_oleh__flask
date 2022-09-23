@@ -29,10 +29,10 @@ app = Flask(__name__)
 def main_page() -> str:
     return (
         f"{background}"
-        "<h3><li><a href='http://127.0.0.1:5000/requirements/'>requirements</a></li></h3>"
-        "<h3><li><a href='http://127.0.0.1:5000/generate-users/'>generate-users</a></li></h3>"
-        "<h3><li><a href='http://127.0.0.1:5000/space/'>space</a></li></h3>"
-        "<h3><li><a href='http://127.0.0.1:5000/mean/'>mean</a></li></h3>"
+        "<h3><li><a href='/requirements/'>requirements</a></li></h3>"
+        "<h3><li><a href='/generate-users/'>generate-users</a></li></h3>"
+        "<h3><li><a href='/space/'>space</a></li></h3>"
+        "<h3><li><a href='/mean/'>mean</a></li></h3>"
     )
 
 
