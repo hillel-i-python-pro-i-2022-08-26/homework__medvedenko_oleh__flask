@@ -27,6 +27,7 @@ app = Flask(__name__)
 def main_page() -> str:
     return (
         f"{background}"
+        # "<style>h1 {color: RebeccaPurple;text-shadow: 2px 2px 2px Plum;}</style>"
         "<h1>Hello, you are on a main page!</h1>"
         "<ul><h3><li><a href='/requirements/'>requirements</a></li></h3>"
         "<h3><li><a href='/generate-users/'>generate-users</a></li></h3>"
@@ -55,7 +56,7 @@ def generate_info() -> str:
 @app.route("/generate-users/<int:amount>")
 def generate_users(amount: int = 100) -> Generator[str, Any, None]:
     for index in range(amount):
-        yield f"<p>{index + 1}. {generate_info()}</p>" f"{background}"
+        yield f"<p>{index + 1}. {generate_info()}</p>{background}"
 
 
 # Json reader
@@ -83,12 +84,12 @@ def mean() -> str:
     average_height = total_height / total_index
     average_weight = total_weight / total_index
     return (
-        f"<p>Average height: {round(average_height, 2)} cm.</p>"
-        f"<p>Average weigh: {round(average_weight, 2)} kg.</p>"
-        f"<p>Number of participants: {total_index}."
+        f"<p>Average height: {round(average_height, 2)} cm</p>"
+        f"<p>Average weigh: {round(average_weight, 2)} kg</p>"
+        f"<p>Number of participants: {total_index}"
         f"{background}"
     )
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0")
