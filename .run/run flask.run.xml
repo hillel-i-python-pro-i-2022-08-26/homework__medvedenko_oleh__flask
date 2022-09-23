@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="flask-i-run" type="PythonConfigurationType" factoryName="Python">
+  <configuration default="false" name="run flask" type="PythonConfigurationType" factoryName="Python">
     <module name="homework__medvedenko_oleh__main" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
