@@ -8,8 +8,10 @@
 
 <h3>You can access paths through hyperlinks.
 Here's the list of them:</h3>
+<ul>
 <li>/</li>
 <li>/requirements/</li>
 <li>/generate-users/<int:amount></li>
 <li>/space/</li>
 <li>/mean/</li>
+</ul>
