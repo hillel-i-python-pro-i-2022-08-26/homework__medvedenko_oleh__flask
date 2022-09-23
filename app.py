@@ -9,9 +9,7 @@ import requests
 # json file url (it's outside the function for faster work)
 request = requests.get("http://api.open-notify.org/astros.json")
 # path to requirements file
-requirements = Path(
-    "/home/oleh/PycharmProjects/homework__medvedenko_oleh__main/requirements.txt"
-)
+requirements = Path("./requirements.txt/")
 # website's background
 background = (
     "<style>body{background-image: "
@@ -29,10 +27,11 @@ app = Flask(__name__)
 def main_page() -> str:
     return (
         f"{background}"
-        "<h3><li><a href='/requirements/'>requirements</a></li></h3>"
+        "<h1>Hello, you are on a main page!</h1>"
+        "<ul><h3><li><a href='/requirements/'>requirements</a></li></h3>"
         "<h3><li><a href='/generate-users/'>generate-users</a></li></h3>"
         "<h3><li><a href='/space/'>space</a></li></h3>"
-        "<h3><li><a href='/mean/'>mean</a></li></h3>"
+        "<h3><li><a href='/mean/'>mean</a></li></h3></ul>"
     )
 
 

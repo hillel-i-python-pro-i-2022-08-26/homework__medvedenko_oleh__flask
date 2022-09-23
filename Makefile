@@ -1,7 +1,7 @@
 .PHONY: homework-i-run
 # Run homework.
 homework-i-run:
-	@FLASK_DEBUG=1 flask run # --host=0.0.0.0
+	@FLASK_DEBUG=1 flask run #--host=0.0.0.0
 
 .PHONY: homework-i-purge
 # Delete all created artifacts, related with homework execution
