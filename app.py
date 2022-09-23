@@ -39,7 +39,7 @@ def main_page() -> str:
 @app.route("/requirements/")
 def requirements_text() -> str:
     return f"{background}" "".join(
-        f"<p>{i}</p>" for i in requirements.read_text().splitlines()
+        f"<p><tt>{i}</tt></p>" for i in requirements.read_text().splitlines()
     )
 
 
