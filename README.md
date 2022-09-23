@@ -7,7 +7,7 @@
 <li>❌ To purge use: "purge homework-i-run"</li>
 
 <h3>You can access paths through hyperlinks.</h3>
-<h3>Here's the list of them:<h3>
+<h3>Here's the list of them:</h3>
 <li>/</li>
 <li>/requirements/</li>
 <li>/generate-users/<int:amount></li>
