@@ -1,6 +1,6 @@
 <h1>Hello there! :sparkles:</h1>
 
-![Flask](https://img.shields.io/badge/Flask-checking-orange)
+![Flask](https://img.shields.io/badge/Flask-Stable-green/)
 
 <h3>This is a little website with hometasks.</h3>
 <ul>
