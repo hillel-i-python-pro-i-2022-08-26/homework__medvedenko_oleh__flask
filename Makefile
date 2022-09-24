@@ -12,6 +12,7 @@ homework-i-purge:
 .PHONY: init-dev
 # Init environment for development
 init-dev:
+	@python3 -m ensurepip --upgrade
 	@pip install --upgrade pip && \
 	pip install --requirement requirements.txt && \
 	pre-commit install
