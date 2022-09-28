@@ -17,8 +17,8 @@ Here's the list of paths!</h3>
 <h6>Database paths</h6>
 `/phones/create?contact_name=*insert*&phone_value=*insert*`<br />
 `/phones/read-all`<br />
-`/phones/id/*insert id*`<br />
+`/phones/read/id/*insert id*`<br />
 `/phones/update/*insert id*?contact_name=*insert*&phone_value=*insert*`<br />
-`/users/delete/*insert id*`
+`/phones/delete/*insert id*`
 
 
