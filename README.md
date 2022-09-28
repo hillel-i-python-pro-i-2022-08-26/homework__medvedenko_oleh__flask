@@ -3,22 +3,24 @@
 ![Flask](https://img.shields.io/badge/Flask%20%2B%20SQL-Checking-orange)
 
 <h3>This is a little website with hometasks</h3>
-▶️ To install and run: `make homework-i-run`<br />
-❌ To purge: `purge homework-i-run`</li>
+▶️ To install and run: <code>make homework-i-run</code><br />
+❌ To purge: <code>purge homework-i-run</code></li>
 
 <h3>You can access some paths through hyperlinks.
 Here's the list of paths!</h3>
-`/` main route<br />
-`/requirements/`.txt<br />
-`/generate-users/*optional number*`<br />
-`/space/` astronauts json file<br />
-`/mean/` average physique (csv)<br />
-<br />
+<ul>
+<li><code>/</code> main route</li>
+<li><code>/requirements/</code>.txt</li>
+<li><code>/generate-users/(optional number)</code></li>
+<li><code>/space/</code> astronauts json file</li>
+<li><code>/mean/</code> average physique (csv)</li>
+</ul>
 <h6>Database paths</h6>
-`/phones/create?contact_name=*insert*&phone_value=*insert*`<br />
-`/phones/read-all`<br />
-`/phones/read/id/*insert id*`<br />
-`/phones/update/*insert id*?contact_name=*insert*&phone_value=*insert*`<br />
-`/phones/delete/*insert id*`
-
+<ul>
+<li><code>/phones/create?contact_name=(insert)&phone_value=(insert)</code></li>
+<li><code>/phones/read-all</code></li>
+<li><code>/phones/read/id/(insert id)</code></li>
+<li><code>/phones/update/(insert id)?contact_name=(insert)&phone_value=(insert)</code></li>
+<li><code>/phones/delete/(insert id)</code></li>
+</ul>
 
