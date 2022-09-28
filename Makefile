@@ -1,6 +1,7 @@
 .PHONY: homework-i-run
 # Run homework.
 homework-i-run:
+	@make init-dev
 	@FLASK_DEBUG=1 flask run #--host=0.0.0.0
 
 .PHONY: homework-i-purge
@@ -12,7 +13,6 @@ homework-i-purge:
 .PHONY: init-dev
 # Init environment for development
 init-dev:
-	@python3 -m ensurepip --upgrade
 	@pip install --upgrade pip && \
 	pip install --requirement requirements.txt && \
 	pre-commit install
