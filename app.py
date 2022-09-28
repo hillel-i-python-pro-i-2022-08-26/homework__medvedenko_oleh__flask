@@ -40,7 +40,7 @@ def main_page() -> str:
         "<h3><li><a href='/generate-users/'>generate-users</a></li></h3>"
         "<h3><li><a href='/space/'>space</a></li></h3>"
         "<h3><li><a href='/mean/'>mean</a></li></h3>"
-        "<h3><li><a href='/phones/read-all'>show the base</a></li></h3></ul></body>"
+        "<h3><li><a href='/phones/read-all'>show the phones table</a></li></h3></ul></body>"
     )
 
 

@@ -17,10 +17,10 @@ Here's the list of paths!</h3>
 </ul>
 <h6>Database paths</h6>
 <ul>
-<li><code>/phones/create?contact_name=(insert)&phone_value=(insert)</code></li>
-<li><code>/phones/read-all</code></li>
-<li><code>/phones/read/id/(insert id)</code></li>
-<li><code>/phones/update/(insert id)?contact_name=(insert)&phone_value=(insert)</code></li>
-<li><code>/phones/delete/(insert id)</code></li>
+<li><code>/phones/create?contact_name=(insert)&phone_value=(insert)</code> write new record</li>
+<li><code>/phones/read-all</code> show the phones table</li>
+<li><code>/phones/read/id/(insert id)</code> show the picked record</li>
+<li><code>/phones/update/(insert id)?contact_name=(insert)&phone_value=(insert)</code> edit record</li>
+<li><code>/phones/delete/(insert id)</code> delete record</li>
 </ul>
 
