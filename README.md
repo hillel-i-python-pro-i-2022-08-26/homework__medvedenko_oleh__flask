@@ -1,27 +1,24 @@
 <h1>Hello there! :sparkles:</h1>
 
-![Flask](https://img.shields.io/badge/Flask-Stable-green/)
+![Flask](https://img.shields.io/badge/Flask%20%2B%20SQL-Checking-orange)
 
-<h3>This is a little website with hometasks.</h3>
-<ul>
-<li>▶️ To run: `make homework-i-run`</li>
-<li>❌ To purge: `purge homework-i-run`</li>
-</ul>
+<h3>This is a little website with hometasks</h3>
+▶️ To install and run: `make homework-i-run`<br />
+❌ To purge: `purge homework-i-run`</li>
 
 <h3>You can access some paths through hyperlinks.
 Here's the list of paths!</h3>
-<ul>
-<li>`/` main route</li>
-<li>`/requirements/`.txt</li>
-<li>`/generate-users/*optional number*`</li>
-<li>`/space/` astronauts json file</li>
-<li>`/mean/` average physique (csv)</li>
-</ul>
-<ul>
-<li>`/phones/create?contact_name=*insert*&phone_value=*insert*`</li>
-<li>`/phones/read-all`</li>
-<li>`/phones/id/*insert id*`</li>
-<li>`/phones/update/*insert id*?contact_name=*insert*&phone_value=*insert*`</li>
-<li>/users/delete/*insert id*</li>
-</ul>
+`/` main route<br />
+`/requirements/`.txt<br />
+`/generate-users/*optional number*`<br />
+`/space/` astronauts json file<br />
+`/mean/` average physique (csv)<br />
+<br />
+<h6>Database paths</h6>
+`/phones/create?contact_name=*insert*&phone_value=*insert*`<br />
+`/phones/read-all`<br />
+`/phones/id/*insert id*`<br />
+`/phones/update/*insert id*?contact_name=*insert*&phone_value=*insert*`<br />
+`/users/delete/*insert id*`
+
 
