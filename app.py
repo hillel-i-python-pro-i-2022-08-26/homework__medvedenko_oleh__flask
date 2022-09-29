@@ -1,8 +1,6 @@
 import csv
-from typing import Any
-from collections.abc import Generator
 from faker import Faker
-from flask import Flask, Response
+from flask import Flask, Response, render_template
 from pathlib import Path
 import requests
 from webargs import fields
@@ -16,14 +14,6 @@ from application.services.db_connection import DBConnection
 request = requests.get("http://api.open-notify.org/astros.json")
 # path to requirements file
 requirements = Path("./requirements.txt/")
-# website's background
-background = (
-    "<head><meta charset='UTF-8'><title>FlaskTasks</title></head>"
-    "<style>body{background-image: "
-    "url(https://preview.redd.it/w4xyk5k6xpt51.jpg?auto=webp&s=bc3d47295b9272b46deda85d53381ffb21c7b2db);"
-    "background-attachment: fixed;background-size: auto 100%; background-repeat: no-repeat;"
-    "background-position: 40% 50%;}</style>"
-)
 
 fake = Faker()
 app = Flask(__name__)
@@ -31,24 +21,21 @@ app = Flask(__name__)
 
 # Main page with hyperlinks
 @app.route("/")
-def main_page() -> str:
-    return (
-        f"{background}"
-        # "<style>h1 {color: RebeccaPurple;text-shadow: 2px 2px 2px Plum;}</style>"
-        "<body><h1>Hello, you are on a main page!</h1>"
-        "<ul><h3><li><a href='/requirements/'>requirements</a></li></h3>"
-        "<h3><li><a href='/generate-users/'>generate-users</a></li></h3>"
-        "<h3><li><a href='/space/'>space</a></li></h3>"
-        "<h3><li><a href='/mean/'>mean</a></li></h3>"
-        "<h3><li><a href='/phones/read-all'>show the phones table</a></li></h3></ul></body>"
-    )
+def main_page():
+    return render_template("main_route_page.html")
+
+
+# html with title, favicon and background
+def html_base():
+    return render_template("base.html")
 
 
 # Requirements reader
 @app.route("/requirements/")
 def requirements_text() -> str:
-    return f"{background}" "".join(
-        f"<p><tt>{i}</tt></p>" for i in requirements.read_text().splitlines()
+    return (
+        "".join(f"<p><tt>{i}</tt></p>" for i in requirements.read_text().splitlines())
+        + html_base()
     )
 
 
@@ -62,16 +49,17 @@ def generate_info() -> str:
 # users generator
 @app.route("/generate-users/")
 @app.route("/generate-users/<int:amount>")
-def generate_users(amount: int = 100) -> Generator[str, Any, None]:
-    for index in range(amount):
-        yield f"<p>{index + 1}. {generate_info()}</p>{background}"
+def generate_users(amount: int = 100) -> str:
+    return html_base() + "<p>".join(
+        [f"{index + 1}. {generate_info()}" for index in range(amount)]
+    )
 
 
 # Json reader
 @app.route("/space/")
 def space() -> str:
     text = request.json()
-    return f"<p>Number of astronauts: {text['number']}</p> {background}"
+    return f"{html_base()}<p>Number of astronauts: {text['number']}</p>"
 
 
 # Mean calculator
@@ -94,8 +82,7 @@ def mean() -> str:
     return (
         f"<p>Average height: {round(average_height, 2)} cm</p>"
         f"<p>Average weigh: {round(average_weight, 2)} kg</p>"
-        f"<p>Number of participants: {total_index}"
-        f"{background}"
+        f"<p>Number of participants: {total_index}{html_base()}"
     )
 
 
@@ -118,7 +105,7 @@ def phones__create(args):
                 },
             )
 
-    return "Ok"
+    return f"Record is written{html_base()}"
 
 
 @app.route("/phones/read-all")
@@ -128,8 +115,7 @@ def phones__read_all():
 
     return "<br>".join(
         [
-            f"{background}"
-            f'{phone["id"]}: {phone["contact_name"]} - {phone["phone_value"]}'
+            f'{phone["id"]}: {phone["contact_name"]} - {phone["phone_value"]}{html_base()}'
             for phone in phones
         ]
     )
@@ -145,7 +131,9 @@ def phones__read(id: int):
             },
         ).fetchone()
 
-    return f'{phone["id"]}: {phone["contact_name"]} - {phone["phone_value"]}'
+    return (
+        f'{phone["id"]}: {phone["contact_name"]} - {phone["phone_value"]}{html_base()}'
+    )
 
 
 @app.route("/phones/update/<int:id>")
@@ -181,7 +169,7 @@ def phones__update(
                 },
             )
 
-    return f"ID: {id} updated"
+    return f"ID: {id} updated{html_base()}"
 
 
 @app.route("/phones/delete/<int:id>")
