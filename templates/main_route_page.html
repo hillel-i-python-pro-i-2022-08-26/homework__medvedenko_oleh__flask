@@ -1,12 +1,17 @@
 {% extends 'base.html' %}
 
 {% block body %}
+<style>
+    li{
+  margin: 10px 0;
+}
+</style>
 <h1>Hello, you are on a main page!</h1>
 <ul>
-    <h3><li><a href='/requirements/'>requirements</a></li></h3>
-    <h3><li><a href='/generate-users/'>generate-users</a></li></h3>
-    <h3><li><a href='/space/'>space</a></li></h3>
-    <h3><li><a href='/mean/'>mean</a></li></h3>
-    <h3><li><a href='/phones/read-all'>show the phones table</a></li></h3>
+    <li><span style="font-size: 120%; "><a href='/requirements/'>requirements</a></span></li>
+    <li><span style="font-size: 120%; "><a href='/generate-users/'>generate-users</a></span></li>
+    <li><span style="font-size: 120%; "><a href='/space/'>space</a></span></li>
+    <li><span style="font-size: 120%; "><a href='/mean/'>mean</a></span></li>
+    <li><span style="font-size: 120%; "><a href='/phones/read-all'>show the phones table</a></span></li>
 </ul>
 {% endblock %}

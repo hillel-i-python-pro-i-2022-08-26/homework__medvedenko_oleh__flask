@@ -33,9 +33,9 @@ def html_base():
 # Requirements reader
 @app.route("/requirements/")
 def requirements_text() -> str:
-    return (
-        "".join(f"<p><tt>{i}</tt></p>" for i in requirements.read_text().splitlines())
-        + html_base()
+    return "".join(
+        f"{html_base()}<p><tt>{i}</tt></p>"
+        for i in requirements.read_text().splitlines()
     )
 
 
@@ -80,9 +80,9 @@ def mean() -> str:
     average_height = total_height / total_index
     average_weight = total_weight / total_index
     return (
-        f"<p>Average height: {round(average_height, 2)} cm</p>"
+        f"{html_base()}<p>Average height: {round(average_height, 2)} cm</p>"
         f"<p>Average weigh: {round(average_weight, 2)} kg</p>"
-        f"<p>Number of participants: {total_index}{html_base()}"
+        f"<p>Number of participants: {total_index}"
     )
 
 
@@ -105,7 +105,7 @@ def phones__create(args):
                 },
             )
 
-    return f"Record is written{html_base()}"
+    return f"{html_base()}Record is written"
 
 
 @app.route("/phones/read-all")
@@ -113,9 +113,9 @@ def phones__read_all():
     with DBConnection() as connection:
         phones = connection.execute("SELECT * FROM phones;").fetchall()
 
-    return "<br>".join(
+    return html_base() + "<br>".join(
         [
-            f'{phone["id"]}: {phone["contact_name"]} - {phone["phone_value"]}{html_base()}'
+            f'{phone["id"]}: {phone["contact_name"]} - {phone["phone_value"]}'
             for phone in phones
         ]
     )
@@ -132,7 +132,7 @@ def phones__read(id: int):
         ).fetchone()
 
     return (
-        f'{phone["id"]}: {phone["contact_name"]} - {phone["phone_value"]}{html_base()}'
+        f'{html_base()}{phone["id"]}: {phone["contact_name"]} - {phone["phone_value"]}'
     )
 
 
@@ -169,7 +169,7 @@ def phones__update(
                 },
             )
 
-    return f"ID: {id} updated{html_base()}"
+    return f"{html_base()}ID: {id} updated"
 
 
 @app.route("/phones/delete/<int:id>")
