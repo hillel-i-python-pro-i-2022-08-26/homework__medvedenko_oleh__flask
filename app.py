@@ -33,8 +33,8 @@ def html_base():
 # Requirements reader
 @app.route("/requirements/")
 def requirements_text() -> str:
-    return html_base() + "".join(
-        f"<p><tt>{i}</tt></p>" for i in requirements.read_text().splitlines()
+    return html_base() + "<p>".join(
+        f"<tt>{i}</tt>" for i in requirements.read_text().splitlines()
     )
 
 
